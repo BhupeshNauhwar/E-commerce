@@ -1,0 +1,143 @@
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header section */
+  #header {
+    background-color:#f4c440;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #header img {
+    width: 100px; /* Adjust the width as per your logo size */
+  }
+  
+  #navbar {
+    list-style: none;
+    display: flex;
+  }
+  
+  #navbar li {
+    margin-right: 1rem;
+  }
+  
+  #navbar a {
+    text-decoration: none;
+    color: #fff;
+    border:1px solid black;
+    border-radius: 9px;;
+    background-color: rgb(205, 173, 57);
+    padding: 0.5rem 1rem;
+    padding-right: 20px;;
+    margin-right: 40px;;
+    transition: background-color 0.3s ease;
+  }
+  
+  #navbar a:hover {
+    background-color: #555;
+  }
+.products{
+    margin: 20px 25px;
+    justify-content: flex-start;
+    width: 98%;
+    display: flex ;
+    flex-wrap: wrap;
+}
+h1{
+  margin-left: 20px;
+}
+.pro-container{
+  background-color: #d7d0d0;
+    width: 23%;
+    padding: 10px 12px;
+    margin: 15px 10px;
+    border: 1px solid #cce7d0;
+    border-radius: 5px;
+    height: 500px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.20);
+    transition: 0.2s ease;
+    position: relative;
+    
+
+}
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+  }
+.pro_img{
+    width: 100%;
+    border-radius: 20px;
+    
+    height: 40vh;
+}
+.section1{
+    text-align: center;
+    margin: 20px;
+}
+.info .category{
+    text-align: start;
+    padding: 10px 0;
+
+}
+.info .aprice{
+    text-decoration: line-through;
+    color: rgb(82, 224, 82);
+  }
+.info desc{
+    color: #606063;
+    font-size: 12px;
+
+}
+.span_star{
+    font-size: 14px;
+    color: rgb(243,181,25);
+}
+.pro-container:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
+}
+
+.footer {
+  background-color: #333;
+  color: #fff; 
+  text-align: center; 
+  padding: 20px;
+  
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.footer p:first-child {
+  margin-bottom: 10px; 
+}
+
+
+.footer p:last-child a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer p:last-child a:hover {
+  text-decoration: underline;
+}

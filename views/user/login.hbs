@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="wrapper ">
+    <div class="form login">
+        
+   
+        
+        <form action="/login" method="post">
+        <div class="userlogin"> UserLogin</div>
+        <div class="details">
+        <button class="adminbtn"><a class="a" href="/admin">Admin</a></button>
+       <span class="messs">
+        
+        {{#if message}}
+        <p class="message" style="color: green;">{{message}}</p>
+            {{/if}}
+       </span>
+       </div>
+
+    <input type="email" name="email" required id="" placeholder="Enter Email">
+    <input type="password" name="password" required placeholder="Enter Password">
+    <input type="submit" name="" id="login" >
+                <div class="register-wrapper">
+                    <span class="register-text">Click here for registration:</span>
+                    <a id="link" href="/register">Register</a>
+                </div>
+        
+        </form>
+    </div>
+    
+</div>
+</body>
+</html>
+
+
+
+
+

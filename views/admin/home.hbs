@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <section id="header">
+        <a href="#"><img src=""></a>
+    <div>
+    <ul id="navbar">
+    <li><a id="a" href="/admin/home">Home</a></li>
+    <li><a id="a"href="/admin/mendata">Men</a></li>
+    <li><a id="a"href="/admin/womendata">Women</a></li>
+    <li><a id="a"href="/admin/kiddata">Kid</a></li>
+    
+   
+    <li><a href="/admin/logout">Log Out</a></li>     </ul>
+   </ul>
+</div>
+</section>
+    
+    <div class="details_admin">
+        <h1>welcome {{admin.name}}</h1>
+        <span>Name:</span> <span> {{admin.name}}</span>
+        <span>Email:</span> <span>{{ admin.email}}</span>
+        <span>Mobile:</span> <span> {{admin.mobile}}</span>
+    </div>
+    
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        <a href="/admin/newproductmen">Add in men</a>
+        <a href="/admin/newproductwomen">Add in women</a>
+        <a href="/admin/newproductkid">Add in kid</a>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Your E-Commerce Admin</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+        
+        
+       
+</body>
+</html>
+
+

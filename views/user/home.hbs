@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+  <section id="header">
+    <a href="#"><img src=""></a>
+    <div>
+      <ul id="navbar">
+        <li><a class="active" href="/home">Home</a></li>
+        <li><a href="/men">Men</a></li>
+        <li><a href="/women">Women</a></li>
+        <li><a href="/kid">Kid</a></li>
+        <li><a href="/cart">Cart</a></li>
+       
+        <button class="btn"><li><a href="/logout">Log Out</a></li></button>
+      </ul>
+       
+    </div>
+  </section>
+      
+    <section id="hero">
+    <h4>Trade-in-offer</h4>
+    <h2>Super value deals</h2>
+    <h1>on all products</h1>
+    <p>Save more with cupons and up to 70% off</p>
+    <button>Shop Now</button>
+  </section>
+
+    <section class="section1">
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Mordern Design</p>
+    </section>
+    <div class="products">
+             {{#each user1}}
+        <div class="pro-container" data_product_id="{{this._id}}" >
+
+            <img class="pro_img" src="{{this.url1}}" alt="">
+            <div class="info">
+            <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+            <p class="category">{{this.category}}</p>
+            
+            <p class="desc">{{this.description}}</p>
+            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+            <form action="/cart" method="post">
+                    <input type="hidden" name="id" value="{{this._id}}">
+                    <input type="hidden" name="url1" value="{{this.url1}}">
+                    <input type="hidden" name="cprice" value="{{this.cprice}}">
+                    <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+            </form>  
+             
+          </div>
+          
+        
+        </div> 
+         {{/each}}
+          {{#each user3}}
+        <div class="pro-container" data_product_id="{{this._id}}" >
+
+            <img class="pro_img" src="{{this.url1}}" alt="">
+            <div class="info">
+            <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+            <p class="category">{{this.category}}</p>
+            
+            <p class="desc">{{this.description}}</p>
+            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+            <form action="/cart" method="post">
+                    <input type="hidden" name="id" value="{{this._id}}">
+                    <input type="hidden" name="url1" value="{{this.url1}}">
+                    <input type="hidden" name="cprice" value="{{this.cprice}}">
+                    <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+            </form>  
+             
+          </div>
+          
+        
+        </div> 
+         {{/each}}
+         {{#each user2}}
+        <div class="pro-container" data_product_id="{{this._id}}" >
+
+            <img class="pro_img" src="{{this.url1}}" alt="">
+            <div class="info">
+            <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+            <p class="category">{{this.category}}</p>
+            
+            <p class="desc">{{this.description}}</p>
+            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+            <form action="/cart" method="post">
+                    <input type="hidden" name="id" value="{{this._id}}">
+                    <input type="hidden" name="url1" value="{{this.url1}}">
+                    <input type="hidden" name="cprice" value="{{this.cprice}}">
+                    <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+            </form>  
+             
+          </div>
+          
+        
+        </div> 
+         {{/each}}
+      </div>  
+    
+            
+      
+    <section id="banner" class="section-m1">
+    <h4>Repair service</h4>
+    <h2>Up to <span>70% off-</span>All t-Shirt and Accessories</h2>
+    <button class="normal">Explore More</button>
+  </section>
+  
+    
+  
+
+    <section class="section1">
+        <h2>New Arrivals</h2>
+        
+    </section>
+    <div class="products">
+              {{#each newdata1}}
+             
+        <div class="pro-container"data_product_id="{{this._id}}" >
+           
+            <img class="pro_img" src="{{this.url1}}" alt="">
+            <div class="info">
+            <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+            <p class="category">{{this.category}}</p>
+            
+            <p class="desc">{{this.description}}</p>
+            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+           <form action="/cart" method="post">
+                    <input type="hidden" name="id" value="{{this._id}}">
+                    <input type="hidden" name="url1" value="{{this.url1}}">
+                    <input type="hidden" name="cprice" value="{{this.cprice}}">
+                    <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </form>  
+             
+        </div>
+         
+    </div>
+    {{/each}}
+    
+      {{#each newdata2}}
+             
+      <div class="pro-container"data_product_id="{{this._id}}" >
+           
+        <img class="pro_img" src="{{this.url1}}" alt="">
+        <div class="info">
+        <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+        <p class="category">{{this.category}}</p>
+            
+        <p class="desc">{{this.description}}</p>
+        <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+        <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+        <form action="/cart" method="post">
+          <input type="hidden" name="id" value="{{this._id}}">
+          <input type="hidden" name="url1" value="{{this.url1}}">
+          <input type="hidden" name="cprice" value="{{this.cprice}}">
+          <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+          </button>
+        </form>  
+             
+        </div>
+         
+    </div>
+    {{/each}}
+    {{#each newdata3}}
+             
+        <div class="pro-container"data_product_id="{{_id}}" >
+           
+            <img class="pro_img" src="{{this.url1}}" alt="">
+            <div class="info">
+            <span class="span_star"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+            <p class="category">{{this.category}}</p>
+            
+            <p class="desc">{{this.description}}</p>
+            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+           <form action="/cart" method="post">
+                    <input type="hidden" name="id" value="{{this._id}}">
+                    <input type="hidden" name="url1" value="{{this.url1}}">
+                    <input type="hidden" name="cprice" value="{{this.cprice}}">
+                    <button type="submit" class="btn">
+                        <i class="fal fa-shopping-cart cart"></i>
+                    </button>
+                </form>  
+             
+        </div>
+         
+    </div>
+    {{/each}}
+    </div>
+   
+      <footer id="contact">
+    <div class="footer-content">
+        <img src="cloths.avif" class="logo" alt="">
+        <div class="footer-ul-container">
+            <ul class="category">
+                <li class="category-title">men</li>
+                <li><a href="#" class="footer-link">t-shirts</a></li>
+                <li><a href="#" class="footer-link">sweatshirts</a></li>
+                <li><a href="#" class="footer-link">shirts</a></li>
+                <li><a href="#" class="footer-link">jeans</a></li>
+                <li><a href="#" class="footer-link">trousers</a></li>
+                <li><a href="#" class="footer-link">shoes</a></li>
+                <li><a href="#" class="footer-link">casuals</a></li>
+                <li><a href="#" class="footer-link">formals</a></li>
+                <li><a href="#" class="footer-link">sports</a></li>
+                <li><a href="#" class="footer-link">watch</a></li>
+            </ul>
+            <ul class="category">
+                <li class="category-title">women</li>
+                <li><a href="#" class="footer-link">t-shirts</a></li>
+                <li><a href="#" class="footer-link">sweatshirts</a></li>
+                <li><a href="#" class="footer-link">shirts</a></li>
+                <li><a href="#" class="footer-link">jeans</a></li>
+                <li><a href="#" class="footer-link">trousers</a></li>
+                <li><a href="#" class="footer-link">shoes</a></li>
+                <li><a href="#" class="footer-link">casuals</a></li>
+                <li><a href="#" class="footer-link">formals</a></li>
+                <li><a href="#" class="footer-link">sports</a></li>
+                <li><a href="#" class="footer-link">watch</a></li>
+            </ul>
+        </div>
+    </div>
+</footer> 
+
+
+     <script src="js/cartScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women`s Data</title>
+    <link rel="stylesheet" href="css/womendata.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src=""></a>
+    <div>
+    <ul id="navbar">
+    <li><a id="a" href="/admin/home">Home</a></li>
+    <li><a id="a"href="/admin/mendata">Men</a></li>
+    <li><a id="a"href="/admin/womendata">Women</a></li>
+    <li><a id="a"href="/admin/kiddata">Kid</a></li>
+    
+   
+    <li><a href="/admin/logout">Log Out</a></li>     </ul>
+   </ul>
+</div>
+</section>
+    
+            <h1>Women`s Collection</h1>
+            <div class="products">
+                 {{#each admin}}
+                <div class="pro-container">
+                   
+                        <img class="pro_img"  src="{{this.url1}}" alt="">
+                        <div class="info">
+                            <p class="category">{{this.category}}</p>
+                            <p class="desc">{{this.description}}</p>
+                            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+                        <br>
+                        </div>
+                   
+                </div>
+                 {{/each}}
+            </div>
+            <footer class="footer">
+        <p>&copy; 2023 Your E-Commerce Admin</p>
+        <p><a class="#a" href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

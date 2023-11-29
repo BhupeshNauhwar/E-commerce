@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d1d7db;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 470px;
+  width: 100%;
+  height: 90vh;
+  border-radius: 12px;
+  padding: 20px 30px 0px;
+  background:  #f4c440;;
+  overflow: hidden;
+}
+
+.form {
+  position: absolute;
+  left: 50%;
+  bottom: -21%;
+  transform: translateX(-50%);
+  width: calc(100% + 220px);
+  padding: 20px 140px;
+  border-radius: 50%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.6s ease;
+}
+
+.wrapper.active .form.login {
+  bottom: -15%;
+  border-radius: 35%;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+form input {
+  height: 60px;
+  outline: none;
+  border: none;
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 8px;
+  background: #fff;
+}
+
+form.login input {
+  border: 1px solid #aaa;
+}
+
+.form.login input:focus {
+  box-shadow: 0 1px 0 #ddd;
+}
+
+form a {
+  color: #333;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+form input[type="submit"] {
+  margin-top: ;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  background:  #f4c440;;
+  color: #fff;
+  border: none;
+}
+
+.register-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.adminbtn {
+  border: none;
+  background-color: #f4c440;
+  float: right;
+  height: 40px;
+  width: 70px;
+  border-radius: 3px;
+}
+
+.a {
+  color: white;
+  text-decoration: none;
+}
+
+.userlogin {
+  text-align: center;
+  color:  #f4c440;;
+  font-size: 1.6rem;
+}
+
+.register-wrapper a {
+  text-decoration: none;
+  color:  #f4c440;
+}

@@ -1,0 +1,71 @@
+<!-- cart.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+    <section id="header">
+    <a href="#"><img src=""></a>
+    <div>
+      <ul id="navbar">
+        <li><a class="active" href="/home">Home</a></li>
+        <li><a href="/men">Men</a></li>
+        <li><a href="/women">Women</a></li>
+        <li><a href="/kid">Kid</a></li>
+        <li><a href="/cart">Cart</a></li>
+       
+        <button class="btn"><li><a href="/logout">Log Out</a></li></button>
+      </ul>
+       
+    </div>
+  </section>
+    {{!-- <a href="/u"></a> --}}
+
+   
+<h2>Shopping Cart</h2>
+    <section class="section1">
+        
+        <h3>Deliverd At:</h3>
+        <h3>Email:{{userData.email}}</h3>
+        <h3>Address:{{userData.address}}</h3>
+        <h3>Mobile:{{userData.mobile}}</h3>
+        <h3>Pincode:{{userData.pincode}}</h3>
+
+        
+    </section>
+
+
+
+  
+<div class="products">
+  {{#each cartdata}}
+    {{#each cartProducts}}
+      <div class="pro-container" data-product-id="{{this._id}}">
+        <img class="pro_img" src="{{this.url1}}" alt="">
+        <p>Price: {{this.cprice}}</p>
+        <button class="btn"><a class="buy" href="/payment">Buy</a></button>
+        <form action="/cart/removeproduct" method="post">
+          <input type="hidden" name="id" value="{{this._id}}">
+          <input type="hidden" name="name" value="{{userData.name}}">
+          <button type="submit" class="btnr">Remove</button>
+        </form>
+      </div>
+    {{/each}}
+  {{/each}}
+  
+  
+  
+</div>
+
+
+
+
+
+   
+</body>
+</html>

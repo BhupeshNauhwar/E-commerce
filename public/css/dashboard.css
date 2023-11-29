@@ -1,0 +1,275 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header section */
+#header {
+  background-color:#f4c440;;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header img {
+  width: 100px; /* Adjust the width as per your logo size */
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+}
+
+#navbar li {
+  margin-right: 1rem;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #fff;
+  border:1px solid black;
+  border-radius: 9px;;
+  background-color: rgb(205, 173, 57);
+  padding: 0.5rem 1rem;
+  padding-right: 20px;;
+  margin-right: 40px;;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: #555;
+}
+
+/* Details admin section */
+.details_admin {
+  background-color: #e7d3d3;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details_admin span {
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Dashboard section */
+.dashboard {
+  background-color: #e7d3d3;
+  margin-left: 40px;;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard a {
+  margin-left: 400px;;
+  display: block;
+  width:25%;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(164, 164, 96);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard a:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling for the footer */
+.footer {
+  background-color: #333; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  padding: 20px; /* Adjust the padding as needed */
+  text-align: center; /* Center-align the content */
+}
+
+/* Styling for the copyright paragraph */
+.footer p:first-child {
+  margin-bottom: 10px; /* Add space below the copyright text */
+}
+
+/* Styling for the links in the second paragraph */
+.footer p:last-child a {
+  color: #fff; /* Set the link color */
+  text-decoration: none; /* Remove underlines from links */
+  margin: 0 10px; /* Add space between the links */
+}
+
+/* Styling for the links on hover */
+.footer p:last-child a:hover {
+  text-decoration: underline; /* Underline the link on hover */
+}
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header section */
+#header {
+  background-color:#f4c440;;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header img {
+  width: 100px; /* Adjust the width as per your logo size */
+}
+
+#navbar {
+  list-style: none;
+  display: flex;
+}
+
+#navbar li {
+  margin-right: 1rem;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: #fff;
+  border:1px solid black;
+  border-radius: 9px;;
+  background-color: rgb(205, 173, 57);
+  padding: 0.5rem 1rem;
+  padding-right: 20px;;
+  margin-right: 40px;;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: #555;
+}
+
+/* Details admin section */
+.details_admin {
+  background-color: #e7d3d3;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.details_admin span {
+  display: block;
+  margin: 1rem 0;
+}
+
+/* Dashboard section */
+.dashboard {
+  background-color: #e7d3d3;
+  margin-left: 40px;;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard a {
+  margin-left: 400px;;
+  display: block;
+  width:25%;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(164, 164, 96);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard a:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.footer {
+  background-color: #333;
+  color: #fff; 
+  text-align: center; 
+  padding: 20px;
+  
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.footer p:first-child {
+  margin-bottom: 10px; 
+}
+
+
+.footer p:last-child a {
+  
+  text-decoration: none; 
+  margin: 0 10px;
+}
+
+.footer p:last-child a:hover {
+  text-decoration: underline;
+}
