@@ -1,11 +1,11 @@
-/* Reset styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Global styles */
+ 
   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -15,7 +15,7 @@
     padding: 0;
   }
   
-  /* Header section */
+ 
   #header {
   background-color:#f4c440;;
     color: #fff;
@@ -142,3 +142,19 @@ h2 {
 .footer p:last-child a:hover {
   text-decoration: underline;
 }
+
+.cart{
+  justify-content: center;
+  width: 40px;
+  height:40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #e8f6ea;
+  font-weight:500;
+  color: #088178;
+  border: 1px solid #cce7d0;
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  
+  }

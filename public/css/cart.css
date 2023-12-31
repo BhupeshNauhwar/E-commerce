@@ -175,7 +175,7 @@ h2 {
 .btn {
 
   border: none;
-  color: white;
+  color: yellow;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -186,7 +186,7 @@ h2 {
 }
 
 .btnr {
-  background-color: #008CBA;
+  background-color: yellow;
   border: none;
   color: white;
   padding: 15px 32px;

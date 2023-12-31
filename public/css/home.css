@@ -98,9 +98,10 @@ width: 100%;
   #navbar li a{
     text-decoration: none;
     font-size: 1.6rem;
-    font-weight: 600;
-    color:#1a1a1a;
+    font-weight: 700;
+    
     transition: 0.3s ease;
+    color:#1a1a1a;
   }
  
 
@@ -111,8 +112,8 @@ width: 100%;
 #navbar li a.active::after,
 #navbar li a:hover::after{
   content: "";
-  width:30%;
-  height: 2px;
+  width:40%;
+  height: 4px;
   background: #088178;
   position: absolute;
   bottom:-4px ;
@@ -140,14 +141,18 @@ width: 100%;
 }
 #hero button{
   background-image: url("button\(1\).png");
-  background-color:red;
-  color:blueviolet;
+  background:transparent;
+  color:rgb(223, 24, 24);
   border:40px sandybrown;
   padding:14px 80px 14px 65px;
   cursor:pointer;
   font-weight:700;
-  font-size:15px;
+  font-size:25px;
   border-radius: 50%;
+}
+#hero button:hover{
+  font-size: 40px;;
+  color:pink;
 }
 #feature{
   display: flex;
@@ -281,7 +286,7 @@ width: 100%;
   background-position: center;
 }
 #banner h4{
-  color:green;
+  color:white;
   font-size: 16px;
 }
 #banner h2{

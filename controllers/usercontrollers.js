@@ -8,8 +8,7 @@ const Kid=require('../models/kid');
 const Cart=require('../models/cart')
 const session = require('express-session');
 
-const {STRIPE_PUBLISHABLE_KEY,STRIPE_SECRET_KEY}=process.env;
-const stripe=require('stripe')(STRIPE_SECRET_KEY)
+
 
 const securePassword=async(password)=>{
     try {
@@ -58,7 +57,7 @@ const insertUser=async(req,res)=>{
 }
 
 
-//login user method start
+
     const loginload=async(req,res)=>{
         try {
             res.render('login')
@@ -109,7 +108,7 @@ const loadHome=async(req,res)=>{    try {
     }
 }
 
-//load men page
+
 const loadMen=async(req,res)=>{
     try {
         const userData=await Men.find({is_men:1})
@@ -149,7 +148,7 @@ const loadMen=async(req,res)=>{
         
     }
 }
-//load women page
+
 const loadWomen=async(req,res)=>{
     try {
         
@@ -187,7 +186,7 @@ const loadWomen=async(req,res)=>{
     }
 }
 
-//load kid page
+
 const loadKid=async(req,res)=>{
     try {
         const userData=await Kid.find({is_kid:1})
@@ -238,19 +237,19 @@ const addtocart = async (req, res) => {
         const cart = await Cart.findOne({ name: name });
 
         if (cart) {
-            
             const existingProductIndex = cart.cartProducts.findIndex(product => product.id === id);
-                
+
             if (existingProductIndex === -1) {
                 
                 cart.cartProducts.push({ url1, cprice, id });
-                await cart.save();
             } else {
-               
-                console.log('Product with the same id already exists. Choose to update or ignore.');
+                
+                cart.cartProducts[existingProductIndex] = { url1, cprice, id };
             }
+
+            await cart.save();
         } else {
-           
+            
             const newCart = new Cart({
                 name: name,
                 cartProducts: [{ url1, cprice, id }]
@@ -258,27 +257,36 @@ const addtocart = async (req, res) => {
 
             await newCart.save();
         }
-
         res.render(loadHome(req, res), { message: "Product added in Cart" });
     } catch (error) {
         console.log(error.message);
-        // Handle the error appropriately
+        
     }
 };
 
   
-
-  const loadCart = async (req, res) => {
+const loadCart = async (req, res) => {
     try {
-      const userData = await User.findById({ _id: req.session.user_id });
-      const cartdata = await Cart.find({  });
-      
-      
-      res.render('cart', { cartdata: cartdata, userData: userData });
+        const userData = await User.findById({ _id: req.session.user_id });
+        const cartdata = await Cart.find({});
+
+                const filteredCartData = cartdata.map(cart => {
+            const filteredProducts = cart.cartProducts.filter(product => product.url1 && product.cprice);
+            return {
+                _id: cart._id,
+                name: cart.name,
+                cartProducts: filteredProducts
+            };
+        });
+
+        res.render('cart', { cartdata: filteredCartData, userData: userData });
     } catch (error) {
-      console.log(error.message);
+        console.log(error.message);
+        
+        res.status(500).send("Internal Server Error");
     }
-  };
+};
+
 const loadremoveproduct=async(req,res)=>{
     try {
         res.render('cart')
@@ -294,21 +302,20 @@ const removeproduct = async (req, res) => {
         
         
           
-          // Accessing the name property
+          
           const userName = idc[0].name;
           
           
         const userCart = await Cart.findOne({ name: userName });
        
         if (userCart) {
-            // Remove the product from cartProducts array based on the productId
+           
             userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
         
-            // Save the updated cart
+           
             await userCart.save();
         
-            res.redirect('/cart'); // Redirect to the cart page after removal
-        } else {
+            res.redirect('/cart');         } else {
             res.status(404).send('Cart not found');
         }
     } catch (error) {

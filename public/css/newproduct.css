@@ -102,3 +102,24 @@ form input[type="submit"] {
     text-decoration: none;
     color: #4070f4;
 }
+.btn{
+    float: right;
+    background-color: #f4c440;
+    border-radius:10px ;
+    height: 40px;
+    width: 70px;
+    
+    
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #4070f4; 
+}
+
+a{
+    color: white;
+    align-content: center;
+    text-decoration: none;
+}
+
+       

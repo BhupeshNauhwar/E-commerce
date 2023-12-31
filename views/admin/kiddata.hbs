@@ -30,16 +30,24 @@
                  {{#each admin}}
                 <div class="pro-container">
                    
-                        <img class="pro_img" src="{{this.url1}}" alt="">
+                        <img class="pro_img"  src="{{this.url1}}" alt="">
                         <div class="info">
                             <p class="category">{{this.category}}</p>
                             <p class="desc">{{this.description}}</p>
                             <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
-            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
-                        <br>
+                            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+                            <br>
+                            <form action="/admin/deletekidproduct" method="post">
+                                <input type="hidden" name="id" value="{{this._id}}">
+                                <button type="submit" class="btn">
+                                    <i class="fa-solid fa-trash cart"></i>
+
+                                </button>
+                            </form>  
                         </div>
                    
                 </div>
+                
                  {{/each}}
             </div>
             <footer class="footer">

@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/Ecommerce')
+mongoose.connect('mongodb+srv://bhupesh05:VkpWdx5IDOi3lovx@ecommerce.1mvzvsa.mongodb.net/?retryWrites=true&w=majority')
 .then(()=>{
     console.log("mongodb connected");
 })

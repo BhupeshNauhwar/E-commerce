@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #d1d7db;
+  background:reb(36, 14, 14);
 }
 
 .wrapper {
