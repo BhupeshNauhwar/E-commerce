@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men`s Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="css/data.css">
+</head>
+<body>
+         <nav>
+            <div class="logo">
+                <h1>FASHIONSHOP</h1>
+            </div>
+            <ul>
+                <li>
+                    <a  href="/admin/home">Home</a>
+                    <a href="/admin/mendata">Men</a>
+                    <a href="/admin/womendata">Women</a>
+                    <a href="/admin/kiddata">Kid</a>
+                    <a href="/admin/logout">Log Out</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1 class="sub">Men`s Collections</h1>
+    
+            <div class="products">
+                 {{#each admin}}
+                <div class="pro-container">
+                   
+                        <img class="pro_img"  src="{{this.url}}" alt="">
+                        <div class="info">
+                            <p class="category">{{this.category}}</p>
+                            <p class="desc">{{this.description}}</p>
+                            <span class="cprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.cprice}}</span>
+                            <span class="aprice"><i class="fas fa-rupee-sign" style="color: #1f60d1;"></i>{{this.aprice}}</span><br>
+                            <br>
+                            <form action="/admin/deletemenproduct" method="post">
+                                <input type="hidden" name="id" value="{{this._id}}">
+                                <button type="submit" class="btn">
+                                    <i class="fas fa-trash cart"></i>
+
+                                </button>
+                            </form>  
+                        </div>
+                   
+                </div>
+                
+                 {{/each}}
+            </div>
+        </div>
+            <footer class="footer">
+        <p>&copy; 2023 Your E-Commerce Admin</p>
+        
+    </footer>
+</body>
+</html>

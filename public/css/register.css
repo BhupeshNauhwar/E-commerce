@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(238, 205, 205, 0.5);
+}
+
+.form {
+  width: 90%;
+  max-width: 400px;
+  background-color: rgba(240, 240, 240, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userlogin {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.message {
+  color: green;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: royalblue;
+  color: #fff;
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.adminbtn {
+  background-color: #04eb32;
+  text-align: center;
+  width: 20vh;
+  height: 6vh;
+  border: none;
+  border-radius: 5px;
+}
+
+.adminbtn a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.adminbtn a:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 500px) {
+  .form {
+    width: 90%;
+    max-width: none;
+  }
+}

@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  
+  background-color: #1279f0;
+}
+.sub {
+  font-family: 'Arial', sans-serif; 
+  font-size: 48px; 
+  font-weight: bold; 
+  color:rgb(3, 72, 99);
+  
+ 
+  
+   
+}
+.a{
+  text-decoration: none;
+  color: white;
+}
+.a:hover{
+  background-color:rgb(14, 72, 219);
+
+}
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 350px;
+  transition: all 0.3s ease;
+}
+
+.form:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.adminbtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.adminbtn:hover {
+  background-color: #0056b3;
+}
+
+.messs {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  color: #4CAF50;
+  transition: color 0.3s ease;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+input[type="submit"] {
+  background-color: #08c518;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff4f4f;
+}
+
+.register-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-text {
+  margin-right: 5px;
+}
+
+#a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+#link{
+  text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 70%;
+  }
+}

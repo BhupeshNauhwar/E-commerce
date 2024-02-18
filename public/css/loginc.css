@@ -1,0 +1,154 @@
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(270deg, #ff9900, #ff3399, #9933cc, #33ccff, #33ff99, #ffff00, #ff9900);
+  background-size: 1400% 1400%;
+  animation: backgroundAnimation 20s ease infinite;
+}
+
+.sub {
+  font-family: 'Arial', sans-serif; 
+  font-size: 40px; 
+  font-weight: bold; 
+  color: #fff;
+}
+
+.a {
+  text-decoration: none;
+  color: white;
+}
+
+.a:hover {
+  background-color: #0056b3;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #0f3057;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 350px;
+  transition: all 0.3s ease;
+}
+
+.form:hover {
+  background-color: #18347c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.adminbtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.adminbtn:hover {
+  background-color: #0056b3;
+}
+
+.messs {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.message {
+  margin: 0;
+  font-size: 14px;
+  color: #4CAF50;
+  transition: color 0.3s ease;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+input[type="submit"] {
+  background-color: #08c518;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50%;
+}
+
+input[type="submit"]:hover {
+  background-color: #ff4f4f;
+}
+
+.register-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-text {
+  margin-right: 0px;
+}
+
+#a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+#link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 70%;
+  }
+}

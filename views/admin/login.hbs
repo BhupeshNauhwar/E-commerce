@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="css/loginc.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form login">
+            <form action="" method="post">
+                <div class="sub"> Admin Login</div>
+                <div class="details">
+                    <button class="adminbtn"><a class="a" href="/">User</a></button>
+                    <span class="messs">
+                        {{#if message}}
+                            <p class="message" style="color:red;">{{message}}</p>
+                        {{/if}}
+                    </span>
+                </div>
+
+                <input type="email" name="email" required id="" placeholder="Enter Email"><br><br>
+                <input type="password" name="password" required placeholder="Enter Password"><br><br>
+                <input type="submit" name="" id="login" value="Login">
+
+               
+            </form>
+        </div>
+        {{!-- <p> Click here for registration:<a href="/register">Register</a></p> --}}
+    </div>
+</body>
+</html>
