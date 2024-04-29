@@ -36,6 +36,7 @@ user_route.post('/cart/removeproduct', auth.isLogin, usercontroller.removeproduc
 user_route.get('/cart/buyremoveproduct', auth.isLogin, usercontroller.loadbuyremoveproduct);
 user_route.post('/cart/buyremoveproduct', auth.isLogin, usercontroller.buyremoveproduct);
 user_route.get('/payment', auth.isLogin, usercontroller.loadPayment);
+user_route.get('/order',auth.isLogin,usercontroller.loadOrder)
 user_route.get('/logout', auth.isLogin, usercontroller.userLogout);
 
 module.exports = user_route;

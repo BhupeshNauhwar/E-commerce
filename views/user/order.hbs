@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders History</title>
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>FASHIONSHOP</h1>
+        </div>
+        <ul>
+            <li>
+                <a href="/home">Home</a>
+                <a href="/men">Men</a>
+                <a href="/women">Women</a>
+                <a href="/kid">Kid</a>
+                <a href="/cart">Cart</a>
+                <a href="/order">Orders</a>
+                <a href="/logout">Log Out</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h2 class="sub">Orders History</h2>
+
+    <div class="product-container">
+        {{#each orders}}
+            {{#each orderProducts}}
+                <div class="pro-container">
+                    <img src="{{url}}" alt="{{name}}">
+                    <div class="info">
+                        <div class="price">&#8377; {{cprice}}</div>
+                    </div>
+                </div>
+            {{/each}}
+        {{/each}}
+    </div>
+
+    <footer>
+  <div>&copy; 2024 Your E-commerce. All rights reserved.</div>
+</footer>
+</body>
+</html>

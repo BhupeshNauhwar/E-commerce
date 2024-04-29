@@ -20,6 +20,8 @@
                     <a href="/women">Women</a>
                     <a href="/kid">Kid</a>
                     <a href="/cart">Cart</a>
+                    <a href="/order">Orders</a>
+
                     <a href="/logout" >Log Out</a>
                 </li>
             </ul>
@@ -59,6 +61,8 @@
           <form  action="/cart/buyremoveproduct" method="post">
             <input type="hidden" name="id" value="{{this._id}}">
             <input type="hidden" name="name" value="{{userData.name}}">
+            <input type="hidden" name="url" value="{{this.url}}">
+            <input type="hidden" name="cprice" value="{{this.cprice}}">
             <button class="btn buy-button">Buy</button>
           </form>
         </div>

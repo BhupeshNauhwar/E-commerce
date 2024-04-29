@@ -1,12 +1,11 @@
 const mongoose=require('mongoose');
 
-const cartSchema=mongoose.Schema({
+const orderSchema=mongoose.Schema({
     name:{
         type:String,
         required:true
     },
-    
-    cartProducts:[{
+    orderProducts:[{
         url:{
             type:String
 
@@ -14,14 +13,14 @@ const cartSchema=mongoose.Schema({
         cprice:{
             type:Number
         },
-    
         id:{
             type:String
-        },
+        }
         
     }]
     
     
     
-})
-module.exports=mongoose.model("Cart",cartSchema)
+},
+{ timestamps: true } )
+module.exports=mongoose.model("Order",orderSchema)

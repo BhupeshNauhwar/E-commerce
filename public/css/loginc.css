@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(270deg, #ff9900, #ff3399, #9933cc, #33ccff, #33ff99, #ffff00, #ff9900);
+  background:rgba(241,243,246,255);
   background-size: 1400% 1400%;
   animation: backgroundAnimation 20s ease infinite;
 }
@@ -18,7 +18,7 @@ body {
   font-family: 'Arial', sans-serif; 
   font-size: 40px; 
   font-weight: bold; 
-  color: #fff;
+  color:black;
 }
 
 .a {
@@ -38,7 +38,7 @@ body {
 }
 
 .form {
-  background-color: #0f3057;
+  background-color:rgba(255,255,255,255);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -47,7 +47,7 @@ body {
 }
 
 .form:hover {
-  background-color: #18347c;
+  background-color: #f4f5f6;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -60,7 +60,10 @@ body {
 }
 
 .adminbtn {
+  float: right;
   background-color: #007bff;
+  width:27vh;
+  height: 9vh;
   color: #fff;
   border: none;
   padding: 8px 12px;

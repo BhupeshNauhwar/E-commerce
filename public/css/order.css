@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+  }
+  
+  .container {
+    background-color: #bccdf4;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #336699;
+    box-shadow: 0px 2px 2px 2px rgba(51, 102, 153, 0.5);
+    padding: 20px;
+  }
+  
+  nav .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+    padding: 10px 20px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #1a4471;
+    color: #fff;
+  }
+  
+  .sub {
+    font-family: 'Arial', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(19, 168, 223);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+  }
+  
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .pro-container {
+    width: 27%;
+    height: 50vh;
+    background-color: #efe1e1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .pro-container img {
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+  }
+  
+.info {
+    padding-top: 10px;
+  }
+  
+  
+  
+  .price {
+    display: inline-block;
+    font-size: 18px;
+    color: #202121;
+    margin-top: 5px;
+  }
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  @media only screen and (max-width: 768px) {
+    nav {
+      padding: 20px 40px;
+    }
+  
+    .pro-container {
+      width: 48%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    nav {
+      padding: 20px;
+    }
+  
+    .pro-container {
+      width: 100%;
+    }
+  }
+  
