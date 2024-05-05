@@ -10,7 +10,7 @@ admin_route.use(session({
     secret: config.sessionSecret,
     resave: true, 
     saveUninitialized: true, 
-    cookie: { maxAge: 3600000 }, 
+    cookie: { maxAge: 7*4*60*60*1000}, 
 }));
 
 admin_route.use(express.json());

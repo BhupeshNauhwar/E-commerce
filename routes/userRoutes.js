@@ -11,7 +11,7 @@ user_route.use(session({
     secret: config.sessionSecret,
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 360000}
+    cookie: { maxAge: 7*4*60*60*1000}
 }));
 
 user_route.set('view engine', 'hbs');
