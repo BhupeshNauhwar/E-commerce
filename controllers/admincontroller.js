@@ -241,16 +241,13 @@ const loaddeleteproductwomen=async(req,res)=>{
     }
 }    
 const deleteproductwomen=async(req,res)=>{
-    try {
-        const deleteID=req.body.id
-    const result = await Women.findByIdAndDelete(deleteID);
-    console.log(result);
+    const deleteID=req.body.id
+    console.log(deleteID)
+    const result = await Men.findByIdAndDelete(deleteID);
     if (result) {
+        
         res.redirect('/admin/womendata')
     } 
-    } catch (error) {
-      console.log(error.message)  
-    }
     
 
 } 
@@ -263,14 +260,18 @@ const loaddeleteproductkid=async(req,res)=>{
 }    
 const deleteproductkid=async(req,res)=>{
     const deleteID=req.body.id
-    const result = await Kid.findByIdAndDelete(deleteID);
+    console.log(deleteID)
+    const result = await Men.findByIdAndDelete(deleteID);
     if (result) {
-       
-        res.redirect('/admin/Kiddata')
+        
+        res.redirect('/admin/kiddata')
     } 
     
 
 } 
+    
+
+
 const loadOrders = async (req, res) => {
     try {
         
