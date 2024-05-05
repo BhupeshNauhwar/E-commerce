@@ -114,7 +114,7 @@ const insertProductmen=async(req,res)=>{
         })
         const userData=await men.save();
         if (userData) {
-            res.redirect('/mendata');
+            res.redirect('/admin/mendata');
         }
         else{
             res.render('newproductmen',{message:'something wrong'});
@@ -145,7 +145,7 @@ const insertProductwomen=async(req,res)=>{
         })
         const userData=await women.save();
         if (userData) {
-            res.redirect('/womendata');
+            res.redirect('/admin/womendata');
            
         }
         else{
@@ -177,7 +177,7 @@ const insertProductkid=async(req,res)=>{
         })
         const userData=await kid.save();
         if (userData) {
-            res.redirect('/kiddata');
+            res.redirect('/admin/kiddata');
            
         }
         else{
@@ -224,6 +224,7 @@ const loaddeleteproductmen=async(req,res)=>{
 }    
 const deleteproductmen=async(req,res)=>{
     const deleteID=req.body.id
+    console.log(deleteID)
     const result = await Men.findByIdAndDelete(deleteID);
     if (result) {
         
@@ -240,12 +241,16 @@ const loaddeleteproductwomen=async(req,res)=>{
     }
 }    
 const deleteproductwomen=async(req,res)=>{
-    const deleteID=req.body.id
+    try {
+        const deleteID=req.body.id
     const result = await Women.findByIdAndDelete(deleteID);
+    console.log(result);
     if (result) {
-        
         res.redirect('/admin/womendata')
     } 
+    } catch (error) {
+      console.log(error.message)  
+    }
     
 
 } 
