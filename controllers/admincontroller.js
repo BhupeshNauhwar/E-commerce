@@ -277,7 +277,7 @@ const loadOrders = async (req, res) => {
             return { user: userData, orders: orders };
         }));
 
-        res.render('orders', { userOrders: userOrders });
+        res.render('Orders', { userOrders: userOrders });
     } catch (error) {
         console.log(error.message);
        

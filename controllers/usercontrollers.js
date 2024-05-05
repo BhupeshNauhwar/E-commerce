@@ -146,7 +146,7 @@ const loadMen = async (req, res) => {
             }
         }
 
-        res.render('men', { admin: userData });
+        res.render('Men', { admin: userData });
     } catch (error) {
         console.error(error.message);
        
