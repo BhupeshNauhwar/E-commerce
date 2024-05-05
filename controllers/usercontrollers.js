@@ -7,6 +7,8 @@ const Women=require('../models/women');
 const Kid=require('../models/kid');
 const Cart=require('../models/cart')
 const Order=require('../models/orders')
+const NewOrder=require('../models/newOrders');
+
 const session = require('express-session');
 
 
@@ -61,7 +63,7 @@ const insertUser=async(req,res)=>{
 
     const loginload=async(req,res)=>{
         try {
-            console.log(req.session);  
+             
             res.render('login')
 
         } catch (error) {
@@ -79,13 +81,11 @@ const verifyLogin=async(req,res)=>{
             const passwordMatch= await bcrypt.compare(password,userData.password);
             
             if (passwordMatch) {
-                //req.session.user_id
-                // console.log(userData._id.toString())
+               
                 req.session.user_id = userData._id.toString();
                 
-                    //console.log(userData._id);
-                //  console.log(req.session.user_id)
-                    console.log(req.session);
+                   
+                    
                  res.redirect('/home')
             } else {
                 res.render('login',{message:' password is incorrect'})
@@ -146,7 +146,7 @@ const loadMen = async (req, res) => {
             }
         }
 
-        res.render('men', { message: "Product added in Cart", admin: userData });
+        res.render('men', { admin: userData });
     } catch (error) {
         console.error(error.message);
        
@@ -158,9 +158,7 @@ const loadWomen = async (req, res) => {
         const userData = await Women.find({ is_women: 1 });
         const userData1 = await User.findById(req.session.user_id);
         
-        if (!userData1) {
-            throw new Error('User not found');
-        }
+        
 
         const name = userData1.name;
 
@@ -182,7 +180,7 @@ const loadWomen = async (req, res) => {
             }
         }
 
-        res.render('women', { message: "Product added in Cart", admin: userData });
+        res.render('women', {  admin: userData });
     } catch (error) {
         console.error(error.message);
         
@@ -195,9 +193,7 @@ const loadKid = async (req, res) => {
         const userData = await Kid.find({ is_kid: 1 });
         const userData1 = await User.findById(req.session.user_id);
         
-        if (!userData1) {
-            throw new Error('User not found');
-        }
+       
 
         const name = userData1.name;
 
@@ -219,7 +215,7 @@ const loadKid = async (req, res) => {
             }
         }
 
-        res.render('kid', { message: "Product added in Cart", admin: userData });
+        res.render('kid', { admin: userData });
     } catch (error) {
         console.error(error.message);
        
@@ -233,7 +229,7 @@ const addtocart = async (req, res) => {
         const cprice = req.body.cprice;
         const id = req.body.id;
         const productName = req.body.category
-        ;
+        
 
         const cart = await Cart.findOne({ name: name });
 
@@ -257,10 +253,11 @@ const addtocart = async (req, res) => {
             });
 
             await newCart.save();
-            console.log( await newCart.save());
+           
+            
         }
         
-        res.render(loadHome(req,res), { message: "Product added in Cart" });
+        res.render(loadHome(req,res));
     } catch (error) {
         console.log(error.message);
         
@@ -300,32 +297,32 @@ const loadremoveproduct=async(req,res)=>{
 }
 const removeproduct = async (req, res) => {
     try {
+        
         const productIdToRemove = req.body.id;
-        const idc=await Cart.find({})
-        console.log(idc)
+       
+        
+        const userData =await User.findById(req.session.user_id);
+        const userName=userData.name;
         
         
-          
-          
-          const userName = idc[0].name;
-          
-          
         const userCart = await Cart.findOne({ name: userName });
+        
+        
        
-        if (userCart) {
-           
-            userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
+        userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
         
-           
-            await userCart.save();
         
-            res.redirect('/cart');         
-        } 
+        await userCart.save();
+
+        
+        res.redirect('/cart');
     } catch (error) {
-        console.log(error.message);
-       
+        
+        console.log( error.message);
+        
     }
 };
+
 const loadbuyremoveproduct=async(req,res)=>{
     try {
         res.render('cart')
@@ -335,48 +332,55 @@ const loadbuyremoveproduct=async(req,res)=>{
 }
 const buyremoveproduct = async (req, res) => {
     try {
-        const userData = await User.findById(req.session.user_id);
         
-
+        const userData = await User.findById(req.session.user_id);
         const userName = userData.name;
+        const email = userData.email;
+        const address = userData.address;
+        const mobile = userData.mobile;
+        const pincode = userData.pincode;
         const url = req.body.url;
         const cprice = req.body.cprice;
         const productIdToRemove = req.body.id;
-
-        const order = await Order.findOne({ name: userName });
-
+        
+       
+        let order = await Order.findOne({ name: userName });
         if (order) {
             order.orderProducts.push({ url, cprice, id: productIdToRemove });
             await order.save();
-
-            const userCart = await Cart.findOne({ name: userName });
-
-            if (userCart) {
-                userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
-                await userCart.save();
-            } else {
-                console.log('Cart not found for user:', userName);
-            }
         } else {
-            const newOrder = new Order({
+            order = new Order({
                 name: userName,
                 orderProducts: [{ url, cprice, id: productIdToRemove }]
             });
-            await newOrder.save();
-
-            const userCart = await Cart.findOne({ name: userName });
-
-            if (userCart) {
-                userCart.cartProducts = [];
-                await userCart.save();
-            } 
+            await order.save();
         }
+
+        let newOrder = await NewOrder.findOne({ name: userName });
+        if (newOrder) {
+            newOrder.orderProducts.push({ url, cprice, id: productIdToRemove });
+        } else {
+            newOrder = new NewOrder({
+                name: userName,
+                email: email,
+                mobile: mobile,
+                address: address,
+                pincode: pincode,
+                orderProducts: [{ url, cprice, id: productIdToRemove }]
+            });
+        }
+        await newOrder.save();
+
+        const userCart = await Cart.findOne({ name: userName });
+        if (userCart) {
+            userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
+            await userCart.save();
+        } 
 
         res.redirect('/payment');
     } catch (error) {
-        console.error('Error in buyremoveproduct:', error);
-       
-    }
+        console.error( error);
+        }
 };
 
 
@@ -405,14 +409,14 @@ const loadOrder = async (req, res) => {
 
 const userLogout = async (req, res) => {
     try {
-        console.log("Logging out user:", req.session.user_id.toString());
+        
 
         req.session.destroy();
-        // res.clearCookie('connect.sid');
-        console.log("Session destroyed.");
+        
+        
         res.redirect('/');
     } catch (error) {
-        console.log("Error logging out:", error.message);
+        console.log( error.message);
     }
 }
 

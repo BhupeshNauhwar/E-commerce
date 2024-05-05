@@ -7,13 +7,16 @@
 body {
   font-family: Arial, sans-serif;
   
-  background-color: #d1e3f8;
+  background-image: url('/images/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 .sub {
   font-family: 'Arial', sans-serif; 
   font-size: 48px; 
   font-weight: bold; 
-  color:rgb(3, 72, 99);
+  color:rgb(245, 243, 243);
   
  
   
@@ -38,7 +41,7 @@ body {
 }
 
 .form {
-  background-color: #fff;
+  background-color: #36363653;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -47,7 +50,7 @@ body {
 }
 
 .form:hover {
-  background-color: #f0f0f0;
+  background-color:rgba(255, 255, 255, 0.309);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -122,7 +125,12 @@ input[type="submit"]:hover {
   text-align: center;
   margin-top: 20px;
 }
-
+#link{
+  color: #007bff;
+}
+ #link:hover{
+  color: #ec1010;
+}
 .register-text {
   margin-right: 5px;
 }

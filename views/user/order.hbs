@@ -28,19 +28,23 @@
 
     <div class="product-container">
         {{#each orders}}
-            {{#each orderProducts}}
-                <div class="pro-container">
-                    <img src="{{url}}" alt="{{name}}">
-                    <div class="info">
-                        <div class="price">&#8377; {{cprice}}</div>
+            <div class="order-container">
+                
+                {{#each orderProducts}}
+                    <div class="pro-container">
+                        <img src="{{url}}" alt="{{name}}">
+                        <div class="info">
+                            <div class="price">&#8377; {{cprice}}</div>
+                            <div class="order-date">Order Date: {{date}}</div>
+                        </div>
                     </div>
-                </div>
-            {{/each}}
+                {{/each}}
+            </div>
         {{/each}}
     </div>
 
     <footer>
-  <div>&copy; 2024 Your E-commerce. All rights reserved.</div>
-</footer>
+        <div>&copy; 2023 Your E-commerce. All rights reserved.</div>
+    </footer>
 </body>
 </html>

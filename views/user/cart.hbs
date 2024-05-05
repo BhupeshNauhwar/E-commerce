@@ -52,7 +52,7 @@
         <p>Price: {{this.cprice}}</p>
         
         <div class="button-container">
-          <form action="/cart/removeproduct" method="post">
+          <form   action="/cart/removeproduct" method="post">
             <input type="hidden" name="id" value="{{this._id}}">
             <input type="hidden" name="name" value="{{userData.name}}">
             <button type="submit" class="btnr">Remove</button>

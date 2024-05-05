@@ -31,7 +31,7 @@ admin_route.post('/',admincontroller.verifyLogin)
 
 
 
-admin_route.get('/home',auth.isLogin,admincontroller.loadDashboard);//data yha pr chahiye line no-44
+admin_route.get('/home',auth.isLogin,admincontroller.loadDashboard);
 admin_route.get('/logout',auth.isLogout,admincontroller.logout);
 
 admin_route.get('/newproductmen',auth.isLogin,admincontroller.loadnewproductmen);
@@ -54,6 +54,11 @@ admin_route.post('/deletewomenproduct',auth.isLogin,admincontroller.deleteproduc
 admin_route.get('/kiddata',auth.isLogin,admincontroller.loadkiddata);
 admin_route.get('/deletekidproduct',auth.isLogin,admincontroller.loaddeleteproductkid);
 admin_route.post('/deletekidproduct',auth.isLogin,admincontroller.deleteproductkid);
+
+admin_route.get('/newOrders',auth.isLogin,admincontroller.loadOrders);
+admin_route.post('/delivered',auth.isLogin,admincontroller.operateOrders);
+admin_route.get('/deleiverdproduct',auth.isLogin,admincontroller.loadDelivered);
+
 
 admin_route.get('*',function(req,res){
     res.redirect('/admin');

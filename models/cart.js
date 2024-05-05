@@ -17,7 +17,7 @@ const cartSchema=mongoose.Schema({
     
         id:{
             type:String
-        },
+        }
         
     }]
     

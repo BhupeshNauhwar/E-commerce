@@ -1,9 +1,22 @@
 const mongoose=require('mongoose');
 
-const orderSchema=mongoose.Schema({
+const newOrderSchema=mongoose.Schema({
     name:{
         type:String,
         required:true
+    },
+    email:{
+        type:String
+        
+    },
+    mobile:{
+        type:Number
+    },
+    address:{
+        type:String
+    },
+    pincode:{
+        type:Number
     },
     orderProducts:[{
         url:{
@@ -27,4 +40,4 @@ const orderSchema=mongoose.Schema({
     
 }
  )
-module.exports=mongoose.model("Order",orderSchema)
+module.exports=mongoose.model("newOrder",newOrderSchema)

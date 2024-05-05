@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
 mongoose.connect('mongodb+srv://bhupesh05:VkpWdx5IDOi3lovx@ecommerce.1mvzvsa.mongodb.net/?retryWrites=true&w=majority&appName=ecommerce')
-
+ //mongoose.connect('mongodb://127.0.0.1:27017/Ecommerce')
 .then(()=>{
     console.log("mongodb connected");
 })

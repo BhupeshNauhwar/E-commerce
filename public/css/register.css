@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+ 
+}
+body{
+  background-image: url('/images/register.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
 .wrapper {
@@ -9,17 +16,23 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(238, 205, 205, 0.5);
+ 
 }
 
 .form {
   width: 90%;
   max-width: 400px;
-  background-color: rgba(240, 240, 240, 0.8);
+  background-color: rgba(60, 53, 53, 0.194);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   animation: fadeInUp 0.5s ease forwards;
+}
+.form:hover {
+   background-color: rgba(60, 53, 53, 0.835);
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 
 @keyframes fadeInUp {
@@ -37,6 +50,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .message {

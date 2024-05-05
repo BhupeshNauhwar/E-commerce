@@ -1,17 +1,13 @@
-@keyframes backgroundAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background:rgba(241,243,246,255);
-  background-size: 1400% 1400%;
-  animation: backgroundAnimation 20s ease infinite;
+  background-size: cover;
+  background-image: url('/images/loginadmin.jpeg');
+  
+ 
 }
 
 .sub {
@@ -38,7 +34,7 @@ body {
 }
 
 .form {
-  background-color:rgba(255,255,255,255);
+  background-color:rgba(132, 139, 156, 0.396);
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -47,7 +43,7 @@ body {
 }
 
 .form:hover {
-  background-color: #f4f5f6;
+  background-color: #aac5e07b;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 

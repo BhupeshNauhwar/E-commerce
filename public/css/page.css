@@ -5,8 +5,8 @@
   font-family: "Spartan", sans-serif;
 }
 
-.container {
-  background-color: #bccdf4;  
+body {
+  background-color: #bccdf4;
 }
 
 nav {
@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #336699;
-  box-shadow: 0px 2px 2px 2px rgba(51, 102, 153, 0.5); 
+  box-shadow: 0px 2px 2px 2px rgba(51, 102, 153, 0.5);
   padding: 20px;
 }
 
@@ -48,14 +48,14 @@ nav ul li a:hover {
 }
 
 .sub {
-  font-family: 'Arial', sans-serif; 
-  font-size: 48px; 
-  font-weight: bold; 
-  color:rgb(19, 168, 223);
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
+  font-family: 'Arial', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: rgb(19, 168, 223);
+  text-transform: uppercase;
+  letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center; 
+  margin: 20px 0;
 }
 
 .products {
@@ -74,10 +74,6 @@ nav ul li a:hover {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   position: relative;
-}
-.pro-container:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .pro_img {
@@ -111,7 +107,7 @@ nav ul li a:hover {
 }
 
 .aprice {
-  margin-right: 5px;
+  margin-top: 5px;
   text-decoration: line-through;
 }
 
@@ -125,17 +121,13 @@ nav ul li a:hover {
   border-radius: 50%;
   background-color: white;
   color: #fff;
-  border: 1px solid #171717; 
+  border: 1px solid #171717;
   text-align: center;
   cursor: pointer;
 }
 
 .fal {
   color: #9ac3eb;
-  padding-top: 10px;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
 }
 
 footer {
@@ -143,22 +135,81 @@ footer {
   color: #fff;
   padding: 20px;
   text-align: center;
-  font-size: 14px;
-  border-top: 1px solid #333;
 }
-
-footer div {
-  margin-bottom: 10px;
-}
-
-
 @media only screen and (max-width: 768px) {
+  nav {
+    padding: 20px;
+    height: 58vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav .logo {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  nav ul li {
+    margin: 30px 0; 
+  }
+
+  nav ul li a {
+    display: block; 
+    font-size: 1.1rem;
+  }
+
+  #hero {
+    padding: 0 20px;
+  }
+
   .pro-container {
-    width: 48%;
+    width: 30%;
   }
 }
 
+
+
 @media only screen and (max-width: 480px) {
+  nav {
+    padding: 20px;
+    height: 58vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav .logo {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  nav ul li {
+    margin: 30px 0; 
+  }
+
+  nav ul li a {
+    display: block; 
+    font-size: 1.1rem;
+  }
+
+ 
   .pro-container {
     width: 100%;
   }
