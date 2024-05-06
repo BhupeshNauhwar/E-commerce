@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const deliverySchema = mongoose.Schema({
+    id:{
+        type:String
+    },
     name: {
         type: String,
         required: true

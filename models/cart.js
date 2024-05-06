@@ -1,7 +1,10 @@
 const mongoose=require('mongoose');
 
 const cartSchema=mongoose.Schema({
-    name:{
+    id:{
+        type:String
+    }
+,    name:{
         type:String,
         required:true
     },

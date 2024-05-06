@@ -122,23 +122,23 @@ const loadMen = async (req, res) => {
         const userData = await Men.find({ is_men: 1 });
         const userData1 = await User.findById(req.session.user_id);
         
-        if (!userData1) {
-            throw new Error('User not found');
-        }
+
 
         const name = userData1.name;
+        const userId = userData1._id;
 
         if (req.body.url && req.body.cprice) {
             const url = req.body.url;
             const cprice = req.body.cprice;
 
-            const cart = await Cart.findOne({ name: name });
+            const cart = await Cart.findOne({ _id: userId });
 
             if (cart) {
                 cart.products.push({ url, cprice });
                 await cart.save();
             } else {
                 const newCart = new Cart({
+                    id:userId,
                     name: name,
                     products: [{ url, cprice }]
                 });
@@ -161,18 +161,19 @@ const loadWomen = async (req, res) => {
         
 
         const name = userData1.name;
-
+        const userId = userData1._id;
         if (req.body.url && req.body.cprice) {
             const url = req.body.url;
             const cprice = req.body.cprice;
 
-            const cart = await Cart.findOne({ name: name });
+            const cart = await Cart.findOne({ _id: userId });
 
             if (cart) {
                 cart.products.push({ url, cprice });
                 await cart.save();
             } else {
                 const newCart = new Cart({
+                    id:userId,
                     name: name,
                     products: [{ url, cprice }]
                 });
@@ -196,18 +197,19 @@ const loadKid = async (req, res) => {
        
 
         const name = userData1.name;
-
+        const userId = userData1._id;
         if (req.body.url && req.body.cprice) {
             const url = req.body.url;
             const cprice = req.body.cprice;
 
-            const cart = await Cart.findOne({ name: name });
+            const cart = await Cart.findOne({ _id: userId });
 
             if (cart) {
                 cart.products.push({ url, cprice });
                 await cart.save();
             } else {
                 const newCart = new Cart({
+                    id:userId,
                     name: name,
                     products: [{ url, cprice }]
                 });
@@ -223,70 +225,62 @@ const loadKid = async (req, res) => {
 }
 const addtocart = async (req, res) => {
     try {
-        const userData = await User.findById({ _id: req.session.user_id });
-        const name = userData.name;
+        const userData = await User.findById(req.session.user_id);
+        const userId = userData._id;
         const url = req.body.url;
         const cprice = req.body.cprice;
         const id = req.body.id;
-        const productName = req.body.category
-        
+        const productName = req.body.category;
 
-        const cart = await Cart.findOne({ name: name });
+        let cart = await Cart.findOne({ id: userId });
 
         if (cart) {
             const existingProductIndex = cart.cartProducts.findIndex(product => product.id === id);
 
             if (existingProductIndex === -1) {
-                
-                cart.cartProducts.push({ url, cprice, id,productName });
+                cart.cartProducts.push({ url, cprice, id, productName });
             } else {
-                
-                cart.cartProducts[existingProductIndex] = { url, cprice, id,productName };
+                cart.cartProducts[existingProductIndex] = { url, cprice, id, productName };
             }
 
             await cart.save();
         } else {
-            
-            const newCart = new Cart({
-                name: name,
-                cartProducts: [{ url, cprice, id ,productName}]
+            cart = new Cart({
+                id: userId,
+                name: userData.name,
+                cartProducts: [{ url, cprice, id, productName }]
             });
 
-            await newCart.save();
-           
-            
+            await cart.save();
         }
-        
-        res.render(loadHome(req,res));
+
+        res.render(loadHome(req, res));
     } catch (error) {
         console.log(error.message);
-        
     }
 };
 
   
+
+
 const loadCart = async (req, res) => {
     try {
-        const userData = await User.findById({ _id: req.session.user_id });
-        const cartdata = await Cart.find({});
+        const userData = await User.findById(req.session.user_id);
+        const cart = await Cart.findOne({ id: req.session.user_id });
 
-            const filteredCartData = cartdata.map(cart => {
-            const filteredProducts = cart.cartProducts.filter(product => product.url && product.cprice);
-            return {
-                _id: cart._id,
-                name: cart.name,
-                cartProducts: filteredProducts
-            };
-        });
-
-        res.render('cart', { cartdata: filteredCartData, userData: userData });
+        let cartdata = [];
+        if (cart) {
+            cartdata = cart.cartProducts;
+        }
+        //console.log(cartdata);
+       // console.log( cartProducts);
+        res.render('cart', { cartdata: cartdata, userData: userData });
     } catch (error) {
         console.log(error.message);
-        
-       
-
+        // Handle errors appropriately
     }
 };
+
 
 const loadremoveproduct=async(req,res)=>{
     try {
@@ -301,14 +295,16 @@ const removeproduct = async (req, res) => {
         const productIdToRemove = req.body.id;
        
         
-        const userData =await User.findById(req.session.user_id);
-        const userName=userData.name;
-        
-        
-        const userCart = await Cart.findOne({ name: userName });
-        
-        
        
+        const userId=req.session.user_id
+
+       
+              
+        
+        
+        const userCart = await Cart.findOne({ id: userId });
+        
+           
         userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
         
         
@@ -335,6 +331,7 @@ const buyremoveproduct = async (req, res) => {
         
         const userData = await User.findById(req.session.user_id);
         const userName = userData.name;
+        const userId = userData._id;
         const email = userData.email;
         const address = userData.address;
         const mobile = userData.mobile;
@@ -342,25 +339,28 @@ const buyremoveproduct = async (req, res) => {
         const url = req.body.url;
         const cprice = req.body.cprice;
         const productIdToRemove = req.body.id;
-        
+
        
-        let order = await Order.findOne({ name: userName });
+        let order = await Order.findOne({ _id: userId });
         if (order) {
             order.orderProducts.push({ url, cprice, id: productIdToRemove });
             await order.save();
         } else {
             order = new Order({
+                id:userId,
                 name: userName,
                 orderProducts: [{ url, cprice, id: productIdToRemove }]
             });
             await order.save();
         }
 
-        let newOrder = await NewOrder.findOne({ name: userName });
+        let newOrder = await NewOrder.findOne({ id:userId });
+        console.log(newOrder)
         if (newOrder) {
             newOrder.orderProducts.push({ url, cprice, id: productIdToRemove });
         } else {
             newOrder = new NewOrder({
+                id:userId,
                 name: userName,
                 email: email,
                 mobile: mobile,
@@ -371,7 +371,7 @@ const buyremoveproduct = async (req, res) => {
         }
         await newOrder.save();
 
-        const userCart = await Cart.findOne({ name: userName });
+        const userCart = await Cart.findOne({ id: userId });
         if (userCart) {
             userCart.cartProducts = userCart.cartProducts.filter(product => product._id.toString() !== productIdToRemove);
             await userCart.save();
@@ -397,7 +397,7 @@ const loadOrder = async (req, res) => {
         const user = await User.findById(userId);
         
         const userName = user.name;
-        const userOrders = await Order.find({ name: userName }).populate('orderProducts');
+        const userOrders = await Order.find({id: userId }).populate('orderProducts');
         
         res.render('order', { orders: userOrders });
     } catch (error) {

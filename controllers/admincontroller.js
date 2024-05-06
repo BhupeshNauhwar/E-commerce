@@ -275,10 +275,10 @@ const deleteproductkid=async(req,res)=>{
 const loadOrders = async (req, res) => {
     try {
         
-        const users = await NewOrders.find({}).distinct('name');
+        const users = await NewOrders.find({}).distinct('id');
 
-            const userOrders = await Promise.all(users.map(async (userName) => {
-            const userData = await NewOrders.findOne({ name: userName });
+            const userOrders = await Promise.all(users.map(async (userId) => {
+            const userData = await NewOrders.findOne({id: userId });
             const orders = userData.orderProducts;
             return { user: userData, orders: orders };
         }));
@@ -291,6 +291,7 @@ const loadOrders = async (req, res) => {
 };
 const operateOrders = async (req, res) => {
     try {
+
         const { userName, userEmail, userAddress, userPincode, userMobile, productId, url, shippingDate, deliveryDate } = req.body;
 
         let existingDelivery = await Delivery.findOne({ name: userName });
@@ -338,11 +339,12 @@ const operateOrders = async (req, res) => {
                 pass: process.env.EMAIL_PASS
             }
         });
+        
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: userEmail,
             subject: 'Order Confirmation',
-            text: `Dear ${userName},\n\nYour order has been successfully processed and will be delivered by ${deliveryDate}.\n\nThank you for shopping with us!\n\nFashionShop Team`
+            text: `Dear ${userName},\n\nYour order has been successfully processed and will be delivered by next two days.\n\nThank you for shopping with us!\n\nFashionShop Team`
         };
         await transporter.sendMail(mailOptions);
 
