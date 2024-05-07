@@ -64,17 +64,7 @@ body {
   transition: all 0.3s ease;
 }
 
-.adminbtn {
-  background-color: #007bff;
-  color: #fff;
-  width: 100%;
-  height: 8vh;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+
 
 .adminbtn:hover {
   background-color: #0056b3;
@@ -133,18 +123,28 @@ input[type="submit"]:hover {
 }
 .register-text {
   margin-right: 5px;
+  color: white;
 }
 
-#a {
-  color: #007bff;
+#adminbtn {
+  display: inline-block;
+  width: 100%; 
+  height: 9vh;
+  background-color: #007bff;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  
+  text-align: center;
+  padding-top: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-#a:hover {
-  text-decoration: underline;
-  color: #0056b3;
+#adminbtn:hover {
+  text-decoration: none;
+  color: #e0e3e6;
+  background-color: #0edde8c1;
 }
 #link{
   text-decoration: none;
@@ -154,10 +154,13 @@ input[type="submit"]:hover {
     width: 90%;
     padding: 20px;
   }
+  .sub{
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .form {
-    width: 70%;
+    width: 62%;
   }
 }

@@ -33,6 +33,7 @@ user_route.get('/cart', auth.isLogin, usercontroller.loadCart);
 user_route.post('/cart', auth.isLogin, usercontroller.addtocart);
 user_route.get('/cart/removeproduct', auth.isLogin, usercontroller.loadremoveproduct);
 user_route.post('/cart/removeproduct', auth.isLogin, usercontroller.removeproduct);
+
 user_route.get('/cart/buyremoveproduct', auth.isLogin, usercontroller.loadbuyremoveproduct);
 user_route.post('/cart/buyremoveproduct', auth.isLogin, usercontroller.buyremoveproduct);
 user_route.get('/payment', auth.isLogin, usercontroller.loadPayment);

@@ -55,16 +55,22 @@ body {
   transition: all 0.3s ease;
 }
 
+
 .adminbtn {
+  display: flex;
   float: right;
   background-color: #007bff;
   width:27vh;
   height: 9vh;
   color: #fff;
   border: none;
-  padding: 8px 12px;
+  padding: 8px px;
   border-radius: 4px;
   text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+ 
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -107,7 +113,8 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   font-size: 16px;
-  width: 50%;
+  width: 49%;
+  height: 9vh;
 }
 
 input[type="submit"]:hover {
@@ -144,10 +151,26 @@ input[type="submit"]:hover {
     width: 90%;
     padding: 20px;
   }
+  .adminbtn{
+    width: 45%; 
+    height: 9vh;
+  }
+  input[type="submit"]{
+    width: 45%; 
+    height: 9vh;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .form {
     width: 70%;
+  }
+  .adminbtn{
+    width: 45%; 
+    height: 9vh;
+  }
+  input[type="submit"]{
+    width: 45%; 
+    height: 9vh;
   }
 }
