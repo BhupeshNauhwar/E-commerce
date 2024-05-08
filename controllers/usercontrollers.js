@@ -8,13 +8,8 @@ const Kid=require('../models/kid');
 const Cart=require('../models/cart')
 const Order=require('../models/orders')
 const NewOrder=require('../models/newOrders');
-const Razorpay=require('razorpay')
-const session = require('express-session');
 
-const razorpay = new Razorpay({
-    key_id: 'YOUR_RAZORPAY_KEY_ID',
-    key_secret: 'YOUR_RAZORPAY_KEY_SECRET'
-});
+const session = require('express-session');
 
 
 const securePassword=async(password)=>{
@@ -373,14 +368,8 @@ const buyremoveproduct = async (req, res) => {
                 orderProducts: [{ url, cprice, id: productIdToRemove }]
             });
         }
-        const orderOptions = {
-            amount: req.body.cprice * 100, 
-            currency: 'INR',
-            receipt: `order_${userId}_${Date.now()}`,
-            payment_capture: 1 
-        };
-
-        const razorpayOrder = await razorpay.orders.create(orderOptions);
+       
+       
 
         await newOrder.save();
 

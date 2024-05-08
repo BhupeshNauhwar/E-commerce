@@ -84,22 +84,24 @@ input[type="submit"]:hover {
 }
 
 .adminbtn {
+  display: flex;
   background-color: #04eb32;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   width: 20vh;
   height: 6vh;
   border: none;
   border-radius: 5px;
-}
-
-.adminbtn a {
   text-decoration: none;
   color: #fff;
-  font-size: 1rem;
+
+
 }
 
-.adminbtn a:hover {
-  text-decoration: underline;
+
+.adminbtn:hover {
+background-color: #f62828;  
 }
 
 .button-container {
