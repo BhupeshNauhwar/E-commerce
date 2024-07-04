@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="wrapper ">
+        <div class="form login">
+        
+   
+        <div class="sub"> User Login</div>
+        <div class="details">
+        
+       <span class="messs">
+        
+        {{#if message}}
+        <p class="message" style="color: rgb(238, 240, 238);">{{message}}</p>
+            {{/if}}
+       </span>
+       </div>
+        <form action="/login" method="post">
+        
+
+        <input type="email" name="email" required id="" placeholder="Enter Email">
+        <input type="password" name="password" required placeholder="Enter Password">
+        <input type="submit" name="" id="login" >
+        <a id="adminbtn" href="/admin">Admin</a>
+        
+        </form>
+        <div class="register-wrapper">
+                    <span class="register-text">Click here for registration:</span>
+                    <a id="link" href="/register">Register</a>
+                </div>
+    </div>
+    
+</div>
+</body>
+</html>
+
+
+
+
+

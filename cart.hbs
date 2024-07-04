@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/cart.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+        btn,
+    .btnr {
+    border: none;
+    color: rgb(238, 238, 232);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;   
+    margin: 4px; 
+    cursor: pointer;
+    border-radius: 5px;
+       }
+    .buy-button {
+    background-color: #3fdf1b; 
+    }
+   .buy-button:hover{
+    background-color: #e92c2c;
+    color: #fff; 
+    }
+    .btnr:hover{
+        background-color: #f16305;
+        color: #fff; 
+    }
+
+     </style>
+</head>
+<body style="background-color: #3264c6f6;">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">FASHIONSHOP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/men">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/women">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kid">Kid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/order">Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2 class="sub">Shopping Cart</h2>
+    <section class="section1">
+        {{#if userData}}
+            <h3>Delivered At:</h3>
+            <h3>Email:{{userData.email}}</h3>
+            <h3>Address:{{userData.address}}</h3>
+            <h3>Mobile:{{userData.mobile}}</h3>
+            <h3>Pincode:{{userData.pincode}}</h3>
+        {{else}}
+            <p>No user data found.</p>
+        {{/if}}
+    </section>
+
+    <div class="products">
+        {{#each cartdata}}
+            <div class="pro-container" data-product-id="{{this._id}}">
+                <img class="pro_img" src="{{this.url}}" alt="">
+                <p>Price: {{this.cprice}}</p>
+                
+                <div class="button-container">
+                    <form action="/cart/removeproduct" method="post">
+                        <input type="hidden" name="id" value="{{this._id}}">
+                        {{#if userData}}
+                            <input type="hidden" name="name" value="{{userData.name}}">
+                        {{/if}}
+                        <button type="submit" class="btnr">Remove</button>
+                    </form>
+                    
+                    <form action="/cart/buyremoveproduct" method="post">
+                        <input type="hidden" name="id" value="{{this._id}}">
+                        {{#if userData}}
+                            <input type="hidden" name="name" value="{{userData.name}}">
+                        {{/if}}
+                        <input type="hidden" name="url" value="{{this.url}}">
+                        <input type="hidden" name="cprice" value="{{this.cprice}}">
+                        <button class="btn buy-button">Buy</button>
+                    </form>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

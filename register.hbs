@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="css/register.css">
+   
+</head>
+<body>
+
+
+<div class="wrapper">
+  <div class="form">
+    <form action="/register" method="post">
+      <h1 class="userlogin">Registration Form</h1>
+      {{#if message}}
+        <p class="message" style="color: rgb(240, 243, 240);">{{message}}</p>
+            {{/if}}
+      <input type="text" name="name" placeholder="Enter Name" required><br><br>
+      <input type="text" name="mob" placeholder="Enter Mobile" required><br><br>
+      <input type="email" name="email" placeholder="Enter Email" required><br><br>
+      <input type="password" name="password" placeholder="Enter Password" required><br><br>
+      <input type="text" name="address" placeholder="Enter Address" required><br><br>
+      <input type="text" name="pc" placeholder="Enter Pincode" required><br><br>
+      <div class="button-container">
+        <input type="submit" name="register" class="submit">
+       <a class="adminbtn" href="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
