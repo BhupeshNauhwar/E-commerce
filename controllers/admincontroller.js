@@ -11,6 +11,7 @@ require('dotenv').config();
 
 
 const bcrypt=require('bcrypt');
+const women = require('../models/women');
 
  
 const loadLogin=async(req,res)=>{
@@ -243,7 +244,7 @@ const loaddeleteproductwomen=async(req,res)=>{
 const deleteproductwomen=async(req,res)=>{
     const deleteID=req.body.id
     console.log(deleteID)
-    const result = await Men.findByIdAndDelete(deleteID);
+    const result = await Women.findByIdAndDelete(deleteID);
     if (result) {
         
         res.redirect('/admin/womendata')
@@ -258,17 +259,17 @@ const loaddeleteproductkid=async(req,res)=>{
         console.log(error.message)
     }
 }    
-const deleteproductkid=async(req,res)=>{
-    const deleteID=req.body.id
-    console.log(deleteID)
-    const result = await Men.findByIdAndDelete(deleteID);
-    if (result) {
+const deleteproductkid= async(req,res)=>{
+        const deleteID=req.body.id
+      console.log(deleteID)
+     const result = await Kid.findByIdAndDelete(deleteID);
+     if (result) {
         
-        res.redirect('/admin/kiddata')
-    } 
+     res.redirect('/admin/kiddata')
+ } 
     
 
-} 
+ } 
     
 
 
