@@ -253,7 +253,7 @@ const addtocart = async (req, res) => {
             await cart.save();
         }
 
-        res.render(loadHome(req, res));
+        res.render(loadCart(req, res));
     } catch (error) {
         console.log(error.message);
     }
@@ -271,12 +271,10 @@ const loadCart = async (req, res) => {
         if (cart) {
             cartdata = cart.cartProducts;
         }
-        //console.log(cartdata);
-       // console.log( cartProducts);
         res.render('cart', { cartdata: cartdata, userData: userData });
     } catch (error) {
         console.log(error.message);
-        // Handle errors appropriately
+       
     }
 };
 
